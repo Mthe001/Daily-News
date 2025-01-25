@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import logoFooter from "../../public/logos.png";
 const Footer = () => {
   return (
     <footer className="bg-[#121212] text-gray-400 py-12">
@@ -7,7 +7,7 @@ const Footer = () => {
         {/* Logo & Description */}
         <div className="flex flex-wrap justify-between items-start gap-8 mb-12">
           <div className="flex items-center">
-            <img className="w-32" src="/public/logos.png" alt="News 240 Logo" />
+            <img className="w-32" src={logoFooter} alt="News 240 Logo" />
             <p className="mt-2 max-w-xs text-sm text-gray-300 ml-4">
               Stay informed with News 240 — your go-to source for the latest breaking news, insights, and updates.
             </p>

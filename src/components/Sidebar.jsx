@@ -3,12 +3,11 @@ import { AiOutlineBars } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 import AdminMenu from './AdminMenu'
 import { FaHome } from 'react-icons/fa'
-import MenuItem from './ui/MenuItem'
+import MenuItem from './ui/MenuItem';
+import logoOfThisWeb from '../../public/logos.png'
 const Sidebar = () => {
   const [isActive, setActive] = useState(false)
 
-
-  // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive)
   }
@@ -20,11 +19,12 @@ const Sidebar = () => {
           <div className='p-4'>
             <Link to={"/"} className="flex items-center justify-center gap-3">
               <div className='p-2'>
-                <img className='w-24 ' src='/public/logos.png' alt="logo" />
+                <img className='w-24 ' src={logoOfThisWeb} alt="logo" />
               </div>
             </Link>
           </div>
         </div>
+
 
         <button
           onClick={handleToggle}
@@ -43,7 +43,7 @@ const Sidebar = () => {
           <div>
             <Link to={"/"} className="flex items-center justify-center gap-3">
               <div className='p-2 flex items-start justify-start'>
-                <img className='w-24' src='/public/logos.png' alt="logo" />
+                <img className='w-24' src={logoOfThisWeb} alt="logo" />
               </div>
 
             </Link>
