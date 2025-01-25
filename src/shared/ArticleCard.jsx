@@ -1,3 +1,44 @@
+// import useRole from "@/hooks/useRole";
+// import moment from "moment";
+// import { Link } from "react-router-dom";
+
+// const ArticleCard = ({ article }) => {
+
+//     const [role] = useRole()
+
+//     const { title, description, postedDate, publisher, image, isPremium, _id, } = article || {}
+
+
+//     return (
+//         <div className={`group w-full border border-black/20 ${isPremium ? "bg-orange-50 hover:bg-orange-300" : ""} rounded-xl transition-all duration-300 ease-in-out `}>
+//             <div className="h-auto  hover:shadow-xl p-4 overflow-hidden rounded-xl transition-all ease-in-out duration-300 flex items-center justify-center flex-col">
+//                 <div className="w-full overflow-hidden rounded-xl flex items-center justify-center">
+//                     <img src={image} className="w-72 h-56 group-hover:scale-110 transition-all duration-300 ease-in-out  rounded-xl object-cover" alt="" />
+//                 </div>
+//                 <div className="mt-4 space-y-3">
+//                     {/* all information here */}
+//                     <div className="flex items-center justify-start gap-2">
+//                         <div className="text-sm flex items-center justify-normal gap-1">
+
+//                             <p>{publisher.slice(0, 8)}...</p>
+//                         </div>
+//                         <p>●</p>
+//                         <p>{moment(postedDate).format('ll')}</p>
+//                         {isPremium && <p className="badge bg-orange-500">Premium</p>}
+//                     </div>
+//                     <h1 className="text-2xl font-medium h-16 overflow-auto">{title}</h1>
+//                     <p className="text-black/80 h-24 overflow-auto">{description.slice(0, 100)}...<button disabled={isPremium} className="font-semibold"> see more </button></p>
+//                 </div>
+//                 <div className="flex items-center justify-end w-full">
+//                     <button disabled={isPremium} className="btn btn-outline btn-sm my-2 justify-self-end"> <Link to={`/article/${_id}`}>Details</Link> </button>
+//                 </div>
+//             </div>
+
+//         </div>
+//     );
+// };
+
+// export default ArticleCard;
 
 
 
@@ -6,70 +47,46 @@ import moment from "moment";
 import { Link } from "react-router-dom";
 
 const ArticleCard = ({ article }) => {
+
     const [role] = useRole();
 
     const { title, description, postedDate, publisher, image, isPremium, _id } = article || {};
 
     return (
         <div
-            className={`group w-full border ${isPremium ? "border-orange-400 bg-gradient-to-r from-orange-100 to-orange-200" : "border-gray-300 bg-gradient-to-r from-cyan-100 to-cyan-400"
-                } rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl`}
+            className={`group w-full border border-black/20 ${isPremium ? "bg-orange-100 hover:bg-orange-200" : "bg-cyan-50 hover:bg-cyan-100"} rounded-xl transition-all duration-300 ease-in-out`}
         >
-            {/* Image Section */}
-            <div className="relative h-56 w-full overflow-hidden rounded-t-lg">
-                <img
-                    src={image}
-                    alt={title}
-                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                {isPremium && (
-                    <div className="absolute top-2 right-2 bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full shadow-lg">
-                        Premium
-                    </div>
-                )}
-            </div>
-
-            {/* Content Section */}
-            <div className="p-4 flex flex-col space-y-3">
-                {/* Publisher and Date */}
-                <div className="flex items-center text-xs text-gray-500 gap-2">
-                    <span className="font-semibold text-gray-700">{publisher.slice(0, 8)}...</span>
-                    <span>●</span>
-                    <span>{moment(postedDate).format("ll")}</span>
+            <div className="h-auto hover:shadow-xl p-6 overflow-hidden rounded-xl transition-all ease-in-out duration-300 flex items-center justify-center flex-col">
+                <div className="w-full overflow-hidden rounded-xl flex items-center justify-center">
+                    <img
+                        src={image}
+                        className="w-full h-48 md:h-64 group-hover:scale-110 transition-all duration-300 ease-in-out rounded-xl object-cover"
+                        alt=""
+                    />
                 </div>
-
-                {/* Title */}
-                <h2 className="text-lg font-bold text-gray-800 group-hover:text-gray-900 line-clamp-2">
-                    {title}
-                </h2>
-
-                {/* Description */}
-                <p className="text-sm text-gray-700 line-clamp-3">
-                    {description.slice(0, 100)}...
-                    {!isPremium && (
-                        <button className="text-blue-600 font-medium ml-1 underline hover:text-blue-800">
-                            See more
-                        </button>
-                    )}
-                </p>
-
-                {/* Action Buttons */}
-                <div className="flex justify-between items-center mt-4">
-                    <Link
-                        to={`/article/${_id}`}
-                        className={`px-4 py-2 text-sm font-semibold rounded-full transition ${isPremium
-                                ? "bg-gray-400 text-gray-800 cursor-not-allowed"
-                                : "bg-blue-600 text-white hover:bg-blue-700"
-                            }`}
+                <div className="mt-4 space-y-4 w-full">
+                    {/* all information here */}
+                    <div className="flex items-center justify-start gap-3 text-sm text-gray-600">
+                        <div className="flex items-center justify-start gap-2">
+                            <p className="font-medium">{publisher.slice(0, 8)}...</p>
+                            <p>●</p>
+                            <p>{moment(postedDate).format('ll')}</p>
+                        </div>
+                        {isPremium && <p className="badge bg-orange-500 text-white px-2 py-1 text-xs">Premium</p>}
+                    </div>
+                    <h1 className="text-xl sm:text-2xl font-semibold text-gray-800 h-16 overflow-auto">{title}</h1>
+                    <p className="text-black/80 h-24 overflow-auto text-sm">
+                        {description.slice(0, 100)}...
+                        <button disabled={isPremium} className="font-semibold text-blue-500 hover:text-blue-700">see more</button>
+                    </p>
+                </div>
+                <div className="flex items-center justify-end w-full">
+                    <button
                         disabled={isPremium}
+                        className="btn btn-outline btn-sm my-2 justify-self-end text-xs px-4 py-2"
                     >
-                        Details
-                    </Link>
-                    {isPremium && (
-                        <span className="text-xs font-medium text-orange-600 bg-orange-100 px-3 py-1 rounded-full">
-                            Premium Access Only
-                        </span>
-                    )}
+                        <Link to={`/article/${_id}`}>Details</Link>
+                    </button>
                 </div>
             </div>
         </div>
