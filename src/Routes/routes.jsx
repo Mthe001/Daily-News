@@ -26,6 +26,7 @@ import Forums from "@/pages/About/Forums";
 import Contribute from "@/pages/OurProject/Contribute";
 import MediaAssets from "@/pages/OurProject/MediaAssets";
 import Changelog from "@/pages/OurProject/Changelog";
+import Releases from "@/pages/OurProject/Releases";
 
 const router = createBrowserRouter([
     {
@@ -101,6 +102,10 @@ const router = createBrowserRouter([
             {
                 path:'/change-log',
                 element:<Changelog/>,
+            },
+            {
+                path:'/release-notes',
+                element:<Releases/>,
             },
 
         ]
