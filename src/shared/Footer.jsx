@@ -47,9 +47,9 @@ const Footer = () => {
               <h3 className="text-white font-medium mb-4">Our Project</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <Link to='/contribute' className="hover:text-white transition">
                     Contribute
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition">

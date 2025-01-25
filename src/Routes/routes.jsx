@@ -23,6 +23,7 @@ import UserProfile from "@/shared/UserProfile";
 import Features from "@/pages/About/Features";
 import Support from "@/pages/About/Support";
 import Forums from "@/pages/About/Forums";
+import Contribute from "@/pages/OurProject/Contribute";
 
 const router = createBrowserRouter([
     {
@@ -86,6 +87,10 @@ const router = createBrowserRouter([
             {
                 path:'/forums',
                 element:<Forums/>,
+            },
+            {
+                path:'/contribute',
+                element: <Contribute/>,
             },
 
         ]
