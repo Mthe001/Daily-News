@@ -89,7 +89,6 @@ const AllArticles = () => {
                                 <input
                                     type="text"
                                     name="search"
-
                                     placeholder="Search news..."
                                     className="flex-grow px-4 py-2 text-gray-700 bg-transparent rounded-l-lg"
                                 />
@@ -110,7 +109,7 @@ const AllArticles = () => {
                                 name="tags"
                                 value={tags}
                                 onChange={(e) => setTags(e.target.value)}
-                                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-2 border border-gray-300 bg-rose-500 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 required
                             >
                                 <option disabled value=''>Select a tag</option>
