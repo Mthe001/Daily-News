@@ -6,7 +6,7 @@ Welcome to **News 240**, your ultimate destination for staying updated with the 
 
 ## 🖥️ Live Preview
 
-[**Visit News 240**](https://yourwebsiteurl.com)
+[**Visit News 240**](https://news240-5b532.web.app/)
 
 ---
 
