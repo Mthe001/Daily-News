@@ -1,54 +1,150 @@
-import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
-import { useEffect, useState } from 'react'
-import subscribe from "@/assets/file.png"
-import { Link } from 'react-router-dom'
-import useRole from '@/hooks/useRole'
+// import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react'
+// import { useEffect, useState } from 'react'
+// import newImage from "@/assets/file.png" // Replace with the updated image
+// import { Link } from 'react-router-dom'
+// import useRole from '@/hooks/useRole'
 
+// function PopupModal() {
+//     const [isOpen, setIsOpen] = useState(false)
+//     const [role] = useRole()
+
+//     function close() {
+//         setIsOpen(false)
+//     }
+
+//     useEffect(() => {
+//         setTimeout(() => {
+//             if (role === "user") {
+//                 setIsOpen(true)
+//             }
+//         }, 10000)
+//     }, [role])
+
+//     return (
+//         <>
+//             <Dialog open={isOpen} as="div" className="relative z-[999999] focus:outline-none" onClose={close}>
+//                 <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-10 w-screen overflow-y-auto" aria-hidden="true">
+//                     <div className="flex min-h-full items-center justify-center p-6">
+//                         <DialogPanel className="w-full max-w-lg bg-white rounded-2xl shadow-2xl">
+//                             <div className="p-6 text-center">
+//                                 <DialogTitle as="h3" className="text-2xl font-bold text-gray-800 mb-4">
+//                                     Exclusive Offer Just for You!
+//                                 </DialogTitle>
+//                                 <p className="text-gray-600 mb-6 leading-relaxed">
+//                                     Discover the power of premium! Upgrade now to access advanced tools, priority support, and so much more. Your journey to the next level begins here!
+//                                 </p>
+//                                 <p className="text-sm text-gray-500 mb-6">
+//                                     Don’t miss out on this limited-time opportunity to enhance your experience. 💎
+//                                 </p>
+//                                 <div className="flex items-center justify-center mb-6">
+//                                     <img
+//                                         src={newImage}
+//                                         alt="Exclusive Offer"
+//                                         className="rounded-lg w-4/5"
+//                                     />
+//                                 </div>
+//                                 <div className="flex flex-col items-center">
+//                                     <Link to="/subscription" className="w-3/4 mb-3">
+//                                         <button
+//                                             onClick={close}
+//                                             className="w-full py-3 bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-indigo-500 hover:to-purple-500 text-white font-semibold rounded-full transition-transform transform hover:scale-105 shadow-lg"
+//                                         >
+//                                             Upgrade Now
+//                                         </button>
+//                                     </Link>
+//                                     <Button
+//                                         onClick={close}
+//                                         className="w-3/4 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-full transition-transform transform hover:scale-105"
+//                                     >
+//                                         Maybe Later
+//                                     </Button>
+//                                 </div>
+//                             </div>
+//                         </DialogPanel>
+//                     </div>
+//                 </div>
+//             </Dialog>
+//         </>
+//     )
+// }
+
+// export default PopupModal;
+
+
+import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Lottie from 'lottie-react';
+import animationData from '@/assets/pop-up-animation.json'; // Lottie animation file
+import useRole from '@/hooks/useRole';
 
 function PopupModal() {
-    let [isOpen, setIsOpen] = useState(false)
-    const [role] = useRole()
+    const [isOpen, setIsOpen] = useState(false);
+    const [role] = useRole();
+    const navigate = useNavigate();
 
     function close() {
-        setIsOpen(false)
+        setIsOpen(false);
     }
 
     useEffect(() => {
         setTimeout(() => {
-            if(role=== "user") {
-                setIsOpen(true)
+            if (role === "user") {
+                setIsOpen(true);
             }
-        }, 10000);
-    }, [role])
+        }, 3000);
+    }, [role]);
 
     return (
         <>
             <Dialog open={isOpen} as="div" className="relative z-[999999] focus:outline-none" onClose={close}>
-                <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+                <div
+                    className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-10 w-screen overflow-y-auto"
+                    aria-hidden="true"
+                >
                     <div className="flex min-h-full items-center justify-center p-6">
-                        <DialogPanel className="w-full max-w-md bg-gradient-to-br from-gray-800 to-gray-700 text-white backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0 rounded-xl shadow-lg overflow-hidden">
-                            <div className="p-6">
-                                <DialogTitle as="h3" className="text-3xl text-orange-400 font-bold uppercase text-center mb-4">
-                                    Unlock Premium Access
+                        <DialogPanel className="w-full max-w-lg bg-white rounded-2xl shadow-2xl">
+                            <div className="p-6 text-center">
+                                <DialogTitle as="h3" className="text-2xl font-bold text-gray-800 mb-4">
+                                    Unlock Premium Features!
                                 </DialogTitle>
-                                <p className="text-sm text-gray-300 text-center mb-6 leading-relaxed">
-                                    Subscribe now to access exclusive content, premium features. Take your journey to the next level with our premium packages!
+                                <p className="text-gray-600 mb-4 leading-relaxed">
+                                    Take your experience to the next level! Upgrade to premium and enjoy advanced tools,
+                                    exclusive content, and priority support.
                                 </p>
-                                <p className='text-sm text-gray-300 text-center mb-6 leading-relaxed'>Don’t miss the chance to elevate your experience.🤍</p>
-                                <div className="flex items-center justify-center">
-                                    <img
-                                        src={subscribe}
-                                        alt="Premium Benefits"
-                                        className="rounded-lg w-4/5"
+                                <p className="text-sm text-gray-500 mb-6">
+                                    Don’t miss out on this amazing opportunity to unlock your full potential. 🚀
+                                </p>
+                                <div className="flex items-center justify-center mb-6">
+                                    <Lottie
+                                        loop={true}
+                                        animationData={animationData}
+                                        className="w-2/3 max-w-[250px]"
                                     />
                                 </div>
-                                <div className="flex flex-col items-center">
-                                    <Link className=' transition transform hover:-translate-y-1 hover:scale-105 text-center w-3/4' to={"/subscription"}>
-                                        <button onClick={close} className="uppercase py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold w-full rounded-full mb-3">
-                                            Subscribe Now
-                                        </button></Link>
-                                    <Button onClick={close} className="bg-transparent border border-gray-500 text-gray-300 font-medium py-2 px-4 rounded-full w-3/4 hover:bg-gray-700 hover:text-white transition transform hover:-translate-y-1 hover:scale-105 shadow-lg uppercase">
-                                        Remind me later.
+                                <div className="flex flex-col items-center gap-3">
+                                    <Link to="/subscription" className="w-3/4">
+                                        <button
+                                            onClick={close}
+                                            className="w-full py-3 bg-gradient-to-r from-blue-500 to-green-500 hover:from-green-500 hover:to-blue-500 text-white font-semibold rounded-full transition-transform transform hover:scale-105 shadow-lg"
+                                        >
+                                            Upgrade Now
+                                        </button>
+                                    </Link>
+                                    <Button
+                                        onClick={close}
+                                        className="w-3/4 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-full transition-transform transform hover:scale-105"
+                                    >
+                                        Maybe Later
+                                    </Button>
+                                    <Button
+                                        onClick={() => {
+                                            close();
+                                            navigate(-1); // Navigate back to the previous page
+                                        }}
+                                        className="w-3/4 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-transform transform hover:scale-105"
+                                    >
+                                        Go Back
                                     </Button>
                                 </div>
                             </div>
@@ -57,7 +153,7 @@ function PopupModal() {
                 </div>
             </Dialog>
         </>
-    )
+    );
 }
 
 export default PopupModal;
