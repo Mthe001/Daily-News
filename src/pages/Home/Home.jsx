@@ -4,7 +4,6 @@ import Statistic from "@/components/Statistics";
 import CarouselSlider from "./Slider";
 import { Helmet } from "react-helmet-async";
 import NewsletterSignup from "./NewsLatter";
-import PollsSection from "./PollsSection";
 import LiveAndAnalyticals from "./LiveAndAnalyticals";
 import FeedbackSection from "./Feedback";
 
@@ -41,11 +40,7 @@ const Home = () => {
             </div> 
             <div>
                 <NewsletterSignup />
-            </div>
-            <div>
-                <PollsSection />
-            </div>
-            
+            </div>            
         </div>
     );
 };
