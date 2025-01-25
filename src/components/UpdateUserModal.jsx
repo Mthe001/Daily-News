@@ -2,7 +2,7 @@ import { imageUpload } from '@/api/Utils';
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';  // Importing useNavigate hook
+import { useNavigate } from 'react-router-dom'; 
 import './update.css';
 import useAuth from '@/hooks/useAuth';
 import useAxiosSecure from '@/hooks/useAxiosSecure';
@@ -12,7 +12,7 @@ export default function UpdateUserProfile({ isOpen, close }) {
     const [imageUrl, setImageUrl] = useState(null);
     const [name, setName] = useState(null);
     const axiosSecure = useAxiosSecure();
-    const navigate = useNavigate();  // Initialize navigate function
+    const navigate = useNavigate();  
 
     const handleChange = async (image) => {
         try {
