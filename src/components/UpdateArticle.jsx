@@ -106,7 +106,7 @@ const UpdateArticle = () => {
     return (
         <div className="flex items-center justify-center my-20">
             <Helmet>
-                <title>Update Article || News Chronicle</title>
+                <title>Update Article || News 240</title>
             </Helmet>
             <div className="md:w-11/12 lg:w-9/12 flex flex-col-reverse md:flex-row bg-white shadow-lg rounded-lg">
                 <div className="md:w-3/6 p-6">
@@ -121,7 +121,7 @@ const UpdateArticle = () => {
                                 name="title"
                                 value={formData.title}
                                 onChange={handleInputChange}
-                                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-2 border bg-gray-500 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 required
                             />
                         </div>
@@ -134,7 +134,7 @@ const UpdateArticle = () => {
                                 id="image"
                                 name="image"
                                 onChange={handleFileChange}
-                                className="w-full p-2 border border-gray-300 rounded focus:outline-none"
+                                className="w-full p-2 border bg-sky-500 border-gray-300 rounded focus:outline-none"
                             />
                         </div>
 
@@ -146,7 +146,7 @@ const UpdateArticle = () => {
                                 name="publisher"
                                 value={formData.publisher}
                                 onChange={handleInputChange}
-                                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-2 border bg-lime-600 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 required
                             >
                                 <option value="" disabled>Select a Publisher</option>
@@ -160,7 +160,7 @@ const UpdateArticle = () => {
 
                         {/* Tags Multi-Select */}
                         <div>
-                            <label htmlFor="tags" className="block text-gray-600 mb-2">Tags</label>
+                            <label htmlFor="tags" className="block font-semibold text-gray-700 mb-2">Tags</label>
                             <Select
                                 id="tags"
                                 name="tags"
@@ -168,7 +168,7 @@ const UpdateArticle = () => {
                                 options={tagOptions}
                                 value={formData.tags}
                                 onChange={handleTagsChange}
-                                className="w-full"
+                                className="w-full bg-slate-700 text-cyan-500"
                             />
                         </div>
 
@@ -181,7 +181,7 @@ const UpdateArticle = () => {
                                 value={formData.description}
                                 onChange={handleInputChange}
                                 rows="4"
-                                className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-2 border bg-slate-100 text-stone-500 border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 required
                             />
                         </div>
