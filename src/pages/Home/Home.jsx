@@ -23,13 +23,12 @@ const Home = () => {
                 <CarouselSlider/>
             </div>
             <div>
+                <AllPublishers />
+            </div>
+            <div>
                 <PlansSection/>
             </div>
-
-            <div>
-                <Statistic stats={stats}/>
-            </div>
-           
+            
            <div>
                <LiveAndAnalyticals/>
            </div>
@@ -37,18 +36,16 @@ const Home = () => {
            <div>
             <FeedbackSection/>
            </div>
-
             <div>
-                <PollsSection/>
+                <Statistic stats={stats} />
+            </div> 
+            <div>
+                <NewsletterSignup />
+            </div>
+            <div>
+                <PollsSection />
             </div>
             
-            <div>
-                <AllPublishers/>
-            </div>
-
-            <div>
-                <NewsletterSignup/>
-            </div>
         </div>
     );
 };

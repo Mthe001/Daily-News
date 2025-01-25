@@ -1,58 +1,82 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const FeedbackSection = () => {
     const [feedback, setFeedback] = useState("");
 
     const handleFeedbackSubmit = (e) => {
         e.preventDefault();
-        // Here you can handle the feedback submission
-        console.log("Feedback Submitted: ", feedback);
+        console.log("Feedback Submitted:", feedback);
         setFeedback(""); // Reset feedback field after submission
     };
 
     return (
-        <div className=" text-white py-10 px-4">
-            <div className="max-w-5xl mx-auto">
-                <h2 className="text-3xl font-bold text-center mb-6">We Value Your Feedback!</h2>
-                <p className="text-lg text-center mb-4">Let us know your thoughts or suggestions for improvement.</p>
+        <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-16 px-6 text-white">
+            <div className="max-w-6xl mx-auto space-y-16">
+                {/* Header */}
+                <div className="text-center">
+                    <h2 className="text-4xl font-extrabold mb-4">We Value Your Feedback!</h2>
+                    <p className="text-lg text-gray-300">
+                        Share your thoughts or suggestions to help us improve.
+                    </p>
+                </div>
 
-                {/* Feedback Form */}
-                <form onSubmit={handleFeedbackSubmit} className="space-y-4">
-                    <div>
-                        <label htmlFor="feedback" className="block text-xl mb-2">
-                            Your Feedback:
-                        </label>
-                        <textarea
-                            id="feedback"
-                            value={feedback}
-                            onChange={(e) => setFeedback(e.target.value)}
-                            className="w-full p-4 rounded-lg text-gray-900"
-                            rows="4"
-                            placeholder="Your feedback here..."
-                            required
-                        />
+                {/* Bento Grid Layout */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    {/* Feedback Form */}
+                    <div className="bg-gray-800 rounded-2xl shadow-lg p-8">
+                        <h3 className="text-2xl font-semibold mb-6">Submit Your Feedback</h3>
+                        <form onSubmit={handleFeedbackSubmit} className="space-y-6">
+                            <div>
+                                <label htmlFor="feedback" className="block text-lg mb-2">
+                                    Your Feedback
+                                </label>
+                                <textarea
+                                    id="feedback"
+                                    value={feedback}
+                                    onChange={(e) => setFeedback(e.target.value)}
+                                    className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 focus:ring-2 focus:ring-yellow-500"
+                                    rows="5"
+                                    placeholder="Type your feedback here..."
+                                    required
+                                />
+                            </div>
+                            <button
+                                type="submit"
+                                className="w-full py-3 bg-yellow-500 text-gray-900 rounded-full font-medium shadow-md hover:bg-yellow-400 transition-all"
+                            >
+                                Submit Feedback
+                            </button>
+                        </form>
                     </div>
 
-                    <div className="flex justify-center">
-                        <button
-                            type="submit"
-                            className="bg-yellow-500 text-white px-6 py-2 rounded-full hover:bg-yellow-400 transition duration-300"
-                        >
-                            Submit Feedback
-                        </button>
-                    </div>
-                </form>
-
-                {/* Example Static Feedback */}
-                <div className="mt-10 space-y-6">
-                    <h3 className="text-xl font-semibold">What others are saying:</h3>
-                    <div className="bg-gray-800 p-4 rounded-lg">
-                        <p className="text-lg">"Love the content! It's always fresh and up-to-date. Keep it up!"</p>
-                        <span className="text-sm text-gray-400">- Andrew Tate</span>
-                    </div>
-                    <div className="bg-gray-800 p-4 rounded-lg">
-                        <p className="text-lg">"Fantastic user experience. Easy to navigate and find relevant articles."</p>
-                        <span className="text-sm text-gray-400">- Marcus Surcus</span>
+                    {/* User Feedback Display */}
+                    <div className="space-y-6">
+                        <h3 className="text-2xl font-semibold">What Others Are Saying</h3>
+                        <div className="grid gap-6">
+                            {[
+                                {
+                                    feedback: "Love the content! It's always fresh and up-to-date. Keep it up!",
+                                    author: "Andrew Tate",
+                                },
+                                {
+                                    feedback:
+                                        "Fantastic user experience. Easy to navigate and find relevant articles.",
+                                    author: "Marcus Surcus",
+                                },
+                                {
+                                    feedback: "Great design and excellent responsiveness. Truly impressive work!",
+                                    author: "Samantha Grey",
+                                },
+                            ].map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+                                >
+                                    <p className="text-lg italic mb-4">"{item.feedback}"</p>
+                                    <span className="text-sm text-gray-400">- {item.author}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
