@@ -103,7 +103,7 @@ const SignUp = () => {
                                 name="name"
                                 required
                                 placeholder="Enter your name"
-                                className="mt-1 block w-full border text-cyan-600 border-gray-300 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-blue-500"
+                                className="mt-1 block w-full border text-cyan-600 border-gray-300 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                             />
                         </div>
 
@@ -118,7 +118,7 @@ const SignUp = () => {
                                 name="email"
                                 required
                                 placeholder="Type here"
-                                className="mt-1 block w-full border text-cyan-600 border-gray-300 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-blue-500"
+                                className="mt-1 block w-full border text-cyan-600 border-gray-300 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                             />
                         </div>
 
@@ -133,7 +133,7 @@ const SignUp = () => {
                                 name="password"
                                 required
                                 placeholder="Enter your password"
-                                className="mt-1 block w-full border border-gray-300 text-cyan-600 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-blue-500"
+                                className="mt-1 block w-full border border-gray-300 text-cyan-600 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                             />
                         </div>
 
@@ -148,17 +148,19 @@ const SignUp = () => {
                                 name="image"
                                 required
                                 placeholder="Enter photo URL"
-                                className="mt-1 block w-full border border-gray-300 text-cyan-600 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-blue-500"
+                                className="mt-1 block w-full border border-gray-300 text-cyan-600 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                             />
                         </div>
 
                         {/* Submit Button */}
-                        <button type="submit"
+                        <button
+                            type="submit"
                             className="w-full hover:scale-[1.02] bg-slate-800 hover:bg-slate-900 text-white font-medium py-2.5 rounded-md transition duration-300 ease-out active:scale-[0.98]"
                         >
                             Register
                         </button>
                     </form>
+
 
 
                     {/* Login Link */}
