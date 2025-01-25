@@ -70,7 +70,7 @@
 import BarChart from "@/components/BarChart";
 import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
-import RadarChart from "@/components/RadarChart"; // Import the new RadarChart component
+import RadarChart from "@/components/RadarChart"; // Import RadarChart
 import useAuth from '@/hooks/useAuth';
 
 const DashboardPage = () => {
@@ -121,9 +121,9 @@ const DashboardPage = () => {
                     </div>
                     <div className="bg-white shadow-md rounded-lg p-6 w-full lg:w-1/3">
                         <h2 className="text-lg font-semibold text-gray-700 mb-4">
-                            Department Performance
+                            Articles by Category
                         </h2>
-                        <RadarChart /> {/* New Radar Chart */}
+                        <RadarChart /> {/* New Radar Chart showing articles by category */}
                     </div>
                 </div>
 
