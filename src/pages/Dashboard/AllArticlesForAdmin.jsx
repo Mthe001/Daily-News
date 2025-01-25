@@ -159,7 +159,7 @@ const AllArticlesForAdmin = () => {
                         {/* head */}
                         <thead>
                             <tr>
-                                <th>#</th>
+                                <th>No.</th>
                                 <th>Image</th>
                                 <th>Title</th>
                                 <th>Name</th>
@@ -213,8 +213,9 @@ const AllArticlesForAdmin = () => {
                                             onClick={() => handleApprove(article._id)}
                                             disabled={article.status === "approved" || article.status === "declined"}
                                             size="sm"
+                                            className="bg-green-500 hover:bg-green-600 text-white"
                                         >
-                                            <IoIosDoneAll />
+                                            <IoIosDoneAll className="text-white" />
                                         </Button>
 
                                         <ArticleDeclineModal
@@ -230,7 +231,7 @@ const AllArticlesForAdmin = () => {
                                             size="sm"
                                             className="bg-red-500 hover:bg-red-600 text-white"
                                         >
-                                            <MdDeleteForever />
+                                            <MdDeleteForever className="text-white" />
                                         </Button>
 
                                         <Button
@@ -238,10 +239,11 @@ const AllArticlesForAdmin = () => {
                                             onClick={() => handleMakePremium(article._id)}
                                             data-tooltip-id="my-tooltip"
                                             data-tooltip-content="Make Premium"
-                                            className="bg-yellow-400 hover:bg-yellow-500 text-white"
+                                            className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-white"
                                         >
                                             Premium
                                         </Button>
+
                                     </td>
                                 </tr>
                             ))}

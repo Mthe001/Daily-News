@@ -36,7 +36,7 @@ const AllUsers = () => {
             title: "Make this user Admin?",
             icon: "question",
             showCancelButton: true,
-            confirmButtonColor: "#2F2F31",
+            confirmButtonColor: "#4CAF50",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, Make Admin!",
         }).then(async (result) => {
@@ -65,22 +65,22 @@ const AllUsers = () => {
                 </div>
             ) : users.length > 0 ? (
                 <div className="overflow-x-auto w-11/12 mx-auto">
-                    <table className="table">
-                        <thead className="bg-gray-100">
+                    <table className="min-w-full table-auto bg-white rounded-lg shadow-lg">
+                        <thead className="bg-blue-600 text-white">
                             <tr>
-                                <th className="text-gray-800">#</th>
-                                <th className="text-gray-800">Image</th>
-                                <th className="text-gray-800">Name</th>
-                                <th className="text-gray-800">Email</th>
-                                <th className="text-gray-800">Status</th>
-                                <th className="text-gray-800">Actions</th>
+                                <th className="px-6 py-3 text-left font-semibold">No.</th>
+                                <th className="px-6 py-3 text-left font-semibold">Image</th>
+                                <th className="px-6 py-3 text-left font-semibold">Name</th>
+                                <th className="px-6 py-3 text-left font-semibold">Email</th>
+                                <th className="px-6 py-3 text-left font-semibold">Status</th>
+                                <th className="px-6 py-3 text-left font-semibold">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {users.map((user, idx) => (
-                                <tr key={user._id} className="hover:bg-gray-50">
-                                    <th className="text-gray-700">{idx + 1}</th>
-                                    <td>
+                                <tr key={user._id} className={`hover:bg-blue-50 ${idx % 2 === 0 ? "bg-gray-100" : "bg-white"}`}>
+                                    <td className="px-6 py-3 text-gray-700">{idx + 1}</td>
+                                    <td className="px-6 py-3">
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">
                                                 <div className="mask mask-squircle h-12 w-12">
@@ -89,16 +89,22 @@ const AllUsers = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="capitalize text-gray-800">{user.name}</td>
-                                    <td className="text-blue-500">{user.email}</td>
-                                    <td className={`capitalize ${user.role === 'admin' ? 'text-green-600' : 'text-yellow-600'}`}>
-                                        {user.role}
+                                    <td className="px-6 py-3 capitalize text-gray-800">{user.name}</td>
+                                    <td className="px-6 py-3 text-blue-600">{user.email}</td>
+                                    <td className="px-6 py-3">
+                                        <span
+                                            className={`px-4 py-1 inline-block text-sm rounded-full ${
+                                                user.role === "admin" ? "bg-green-200 text-green-800" : "bg-yellow-200 text-yellow-800"
+                                            }`}
+                                        >
+                                            {user.role}
+                                        </span>
                                     </td>
-                                    <td>
+                                    <td className="px-6 py-3">
                                         {user.role === "admin" ? (
-                                            <p className="px-6 inline py-1 rounded-md bg-black text-white">Admin</p>
+                                            <p className="px-6 inline py-1 rounded-md bg-gray-800 text-white">Admin</p>
                                         ) : (
-                                            <Button onClick={() => handleAdmin(user.email)} size="sm" className="bg-indigo-600 hover:bg-indigo-700 text-white">
+                                            <Button onClick={() => handleAdmin(user.email)} size="sm" className="bg-green-500 hover:bg-green-600 text-white">
                                                 Make Admin
                                             </Button>
                                         )}
@@ -107,28 +113,28 @@ const AllUsers = () => {
                             ))}
                         </tbody>
                     </table>
-                    <div className="flex justify-between items-center mt-4">
+                    <div className="flex justify-between items-center mt-6">
                         <button
                             onClick={handlePreviousPage}
                             disabled={page === 1}
-                            className="px-4 py-2 bg-gray-500 text-white rounded disabled:bg-gray-300"
+                            className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 disabled:bg-gray-300"
                         >
                             Previous
                         </button>
-                        <span>
+                        <span className="text-gray-700">
                             Page {page} of {totalPages}
                         </span>
                         <button
                             onClick={handleNextPage}
                             disabled={page === totalPages}
-                            className="px-4 py-2 bg-gray-500 text-white rounded disabled:bg-gray-300"
+                            className="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-600 disabled:bg-gray-300"
                         >
                             Next
                         </button>
                     </div>
                 </div>
             ) : (
-                <div className="md:p-20">
+                <div className="md:p-20 text-center">
                     <h2 className="text-6xl text-gray-700">No users found at the moment.</h2>
                 </div>
             )}
