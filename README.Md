@@ -30,9 +30,9 @@ Welcome to **News 240**, your ultimate destination for staying updated with the 
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** React.js, TailwindCSS
-- **Backend:** Firebase Authentication
-- **Database:** Firestore
+- **Frontend:** React.js, TailwindCSS,ShadCn UI
+- **Backend:** Node JS And Express Js
+- **Database:** MongoDB
 - **Animation:** Lottie for smooth illustrations
 - **Libraries:** React Router, React Hot Toast, React Helmet Async
 
