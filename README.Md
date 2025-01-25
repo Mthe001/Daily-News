@@ -38,6 +38,38 @@ Welcome to **News 240**, your ultimate destination for staying updated with the 
 
 ---
 
+🤝 Contributing
+Contributions, issues, and feature requests are welcome!
+Feel free to check the issues page.
+
+📄 License
+This project is licensed under the MIT License.
+See the LICENSE file for details.
+
+🌟 Acknowledgments
+React.js: For the amazing frontend library.
+Firebase: For seamless backend integration.
+Lottie: For stunning animations.
+And to all contributors and users who make News 240 better every day!
+👤 About Me
+Name: MThe001
+I'm a passionate web developer with a love for creating dynamic, user-friendly applications. I enjoy exploring new technologies and building projects that make a difference.
+
+✉️ Contact Information:
+Email: [mtheredwanulhaque@gmail.com]
+GitHub: https://github.com/Mthe001
+LinkedIn: https://linkedin.com/in/yourprofile
+🧩 Hobbies:
+Coding: I'm always learning and building new things.
+Photography: I enjoy capturing beautiful moments through the lens.
+Gaming: A casual gamer, always up for a good challenge.
+Music: Listening to all kinds of music, especially indie rock and electronic.
+
+
+
+
+
+
 ## 🚧 Installation
 
 ### Step 1: Clone the Repository
