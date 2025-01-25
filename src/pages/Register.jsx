@@ -1,82 +1,87 @@
-import { Link, Navigate, useNavigate } from 'react-router-dom'
-import { toast } from 'react-hot-toast'
-import useAuth from '@/hooks/useAuth'
-import { imageUpload, saveUser } from '@/api/Utils'
-import { Helmet } from 'react-helmet-async'
-import { FaGoogle } from 'react-icons/fa'
-import Loader from '@/shared/LoaderSpinner'
-import Lottie from 'lottie-react'
-import register from "@/assets/login-anime.json"
+import { useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import useAuth from "@/hooks/useAuth";
+import { imageUpload, saveUser } from "@/api/Utils";
+import { Helmet } from "react-helmet-async";
+import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
+import Loader from "@/shared/LoaderSpinner";
+import Lottie from "lottie-react";
+import register from "@/assets/login-anime.json";
 
 const SignUp = () => {
-    const { createUser, user, updateUser, googleSignIn, setUser, loading, setLoading } = useAuth()
-    const navigate = useNavigate()
-    if (user) return <Navigate to={"/"} replace={true} />
+    const { createUser, user, updateUser, googleSignIn, setUser, loading, setLoading } = useAuth();
+    const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+
+    if (user) return <Navigate to={"/"} replace={true} />;
+
     // form submit handler
-    const handleSubmit = async event => {
-        event.preventDefault()
-        const form = event.target
-        const name = form.name.value
-        const email = form.email.value
-        const password = form.password.value
-        const image = form.image.files[0]
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const image = form.image.files[0];
 
         const passwordRegex = /^(?=.{6,})(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).*$/;
 
-        // setLoading(true)
-        const imageURL = await imageUpload(image)
-        console.log(imageURL)
+        const imageURL = await imageUpload(image);
 
         try {
             if (!passwordRegex.test(password)) {
-                return toast.error("Must be 6+ chars with a number, uppercase, & special character.")
+                return toast.error(
+                    "Password must be 6+ characters, with an uppercase letter, a number, and a special character."
+                );
             }
-            setLoading(true)
-            //2. User Registration
-            const result = await createUser(email, password)
-            //3. Save username & profile photo
-            await updateUser(name, imageURL)
-            console.log(result)
-            const user = result.user
-            const newUser = { ...user, name, imageURL }
-            setUser(newUser)
+            setLoading(true);
 
-            // save user info in db if the user is new
-            await saveUser({ ...result?.user, displayName: name, photoURL: imageURL })
-            setUser(result.user)
-            navigate('/')
-            toast.success('Signup Successful')
+            // User Registration
+            const result = await createUser(email, password);
 
+            // Save username & profile photo
+            await updateUser(name, imageURL);
+            const newUser = { ...result.user, name, imageURL };
+            setUser(newUser);
+
+            // Save user info in the database
+            await saveUser({ ...result?.user, displayName: name, photoURL: imageURL });
+            navigate("/");
+            toast.success("Signup Successful");
         } catch (err) {
-            console.log(err)
-            toast.error(err?.message)
-
+            console.log(err);
+            toast.error(err?.message);
         } finally {
-            setLoading(false)
+            setLoading(false);
         }
-    }
+    };
 
-    // Handle Google Signin
+    // Handle Google Sign-in
     const handleGoogleSignIn = async () => {
         try {
-            //User Registration using google
-            const data = await googleSignIn()
-            // save user info in db if the user is new
-            await saveUser(data?.user)
+            const data = await googleSignIn();
 
-            navigate('/')
-            toast.success('Signup Successful')
+            // Save user info in the database
+            await saveUser(data?.user);
+
+            navigate("/");
+            toast.success("Signup Successful");
         } catch (err) {
-            console.log(err)
-            toast.error(err?.message)
-        }finally{
-            setLoading(false)
-            
+            console.log(err);
+            toast.error(err?.message);
+        } finally {
+            setLoading(false);
         }
+    };
 
-    }
+    if (loading)
+        return (
+            <div className="flex items-center justify-center h-screen">
+                <Loader></Loader>
+            </div>
+        );
 
-    if (loading) return <div className='flex items-center justify-center h-screen'><Loader></Loader></div>
     return (
         <div className="my-10 flex items-center justify-center ">
             <Helmet>
@@ -123,31 +128,37 @@ const SignUp = () => {
                         </div>
 
                         {/* Password Field */}
-                        <div className="mb-4">
+                        <div className="mb-4 relative">
                             <label htmlFor="password" className="block text-sm font-medium text-gray-600">
                                 Password
                             </label>
                             <input
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 id="password"
                                 name="password"
                                 required
                                 placeholder="Enter your password"
                                 className="mt-1 block w-full border border-gray-300 text-cyan-600 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                             />
+                            <button
+                                type="button"
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute right-3 top-11 transform -translate-y-1/2 text-gray-600 hover:text-gray-800"
+                            >
+                                {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+                            </button>
                         </div>
 
-                        {/* Photo URL Field */}
+                        {/* Photo Upload Field */}
                         <div className="mb-4">
                             <label htmlFor="photoUrl" className="block text-sm font-medium text-gray-600">
-                                Photo URL
+                                Photo Upload
                             </label>
                             <input
                                 type="file"
                                 id="photoUrl"
                                 name="image"
                                 required
-                                placeholder="Enter photo URL"
                                 className="mt-1 block w-full border border-gray-300 text-cyan-600 bg-white rounded-md p-2.5 focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
                             />
                         </div>
@@ -161,8 +172,6 @@ const SignUp = () => {
                         </button>
                     </form>
 
-
-
                     {/* Login Link */}
                     <p className="mt-4 text-sm text-gray-600">
                         Already have an account?{" "}
@@ -170,9 +179,15 @@ const SignUp = () => {
                             Login here
                         </Link>
                     </p>
+
                     <div className="divider">OR</div>
+
+                    {/* Google Sign-In */}
                     <div className="flex justify-center gap-4 mt-2">
-                        <button onClick={handleGoogleSignIn} className="bg-white text-gray-800 border border-gray-300 px-3 py-2 rounded-lg w-full flex items-center justify-center gap-3 hover:bg-gray-100">
+                        <button
+                            onClick={handleGoogleSignIn}
+                            className="bg-white text-gray-800 border border-gray-300 px-3 py-2 rounded-lg w-full flex items-center justify-center gap-3 hover:bg-gray-100"
+                        >
                             <FaGoogle size={20} className="text-red-500" />
                             <span className="font-medium">Login with Google</span>
                         </button>
@@ -180,7 +195,7 @@ const SignUp = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default SignUp
+export default SignUp;
