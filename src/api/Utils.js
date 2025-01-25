@@ -17,7 +17,7 @@ export const imageUpload = async (imageData) => {
 
 export const saveUser = async (user) => {
     try {
-        await axios.post(`http://localhost:5000/users/${user?.email}`, {
+        await axios.post(`https://assignment-12-server-pi-fawn.vercel.app/users/${user?.email}`, {
             name: user?.displayName,
             email: user?.email,
             image: user.photoURL,
