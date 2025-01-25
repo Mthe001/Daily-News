@@ -1,6 +1,6 @@
 import './navbar.css';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-
+import logoOfWebsite from "../../public/logos.png"
 import user2 from "@/assets/user.png"
 import useAuth from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
@@ -61,7 +61,7 @@ function Navbar() {
                 </div>
                 <Link to={"/"} className="flex items-center justify-center gap-3">
                     <div className='p-2'>
-                        <img className='w-24' src='/public/logos.png' alt="logo" />
+                        <img className='w-24' src={logoOfWebsite} alt="logo" />
                     </div>
                 </Link>
             </div>
