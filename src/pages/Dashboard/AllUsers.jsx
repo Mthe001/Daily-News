@@ -224,20 +224,20 @@ const AllUsers = () => {
             ) : users.length > 0 ? (
                 <div className="overflow-x-auto w-11/12 mx-auto">
                     <table className="table">
-                        <thead>
+                        <thead className="bg-gray-100">
                             <tr>
-                                <th>#</th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Status</th>
-                                <th>Actions</th>
+                                <th className="text-gray-800">#</th>
+                                <th className="text-gray-800">Image</th>
+                                <th className="text-gray-800">Name</th>
+                                <th className="text-gray-800">Email</th>
+                                <th className="text-gray-800">Status</th>
+                                <th className="text-gray-800">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {users.map((user, idx) => (
-                                <tr key={user._id}>
-                                    <th>{idx + 1}</th>
+                                <tr key={user._id} className="hover:bg-gray-50">
+                                    <th className="text-gray-700">{idx + 1}</th>
                                     <td>
                                         <div className="flex items-center gap-3">
                                             <div className="avatar">
@@ -247,14 +247,16 @@ const AllUsers = () => {
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="capitalize">{user.name}</td>
-                                    <th>{user.email}</th>
-                                    <td className="capitalize">{user.role}</td>
+                                    <td className="capitalize text-gray-800">{user.name}</td>
+                                    <td className="text-blue-500">{user.email}</td>
+                                    <td className={`capitalize ${user.role === 'admin' ? 'text-green-600' : 'text-yellow-600'}`}>
+                                        {user.role}
+                                    </td>
                                     <td>
                                         {user.role === "admin" ? (
                                             <p className="px-6 inline py-1 rounded-md bg-black text-white">Admin</p>
                                         ) : (
-                                            <Button onClick={() => handleAdmin(user.email)} size="sm">
+                                            <Button onClick={() => handleAdmin(user.email)} size="sm" className="bg-indigo-600 hover:bg-indigo-700 text-white">
                                                 Make Admin
                                             </Button>
                                         )}
@@ -285,7 +287,7 @@ const AllUsers = () => {
                 </div>
             ) : (
                 <div className="md:p-20">
-                    <h2 className="text-6xl">No users found at the moment.</h2>
+                    <h2 className="text-6xl text-gray-700">No users found at the moment.</h2>
                 </div>
             )}
         </div>
