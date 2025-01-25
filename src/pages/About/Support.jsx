@@ -13,7 +13,7 @@ const Support = () => {
         e.preventDefault();
 
         // Handle your form data here
-        console.log('Form submitted:', { name, email, message });
+        // console.log('Form submitted:', { name, email, message });
 
         // Redirect to homepage after submission
         navigate('/');

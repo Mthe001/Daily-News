@@ -92,7 +92,7 @@ const UpdateArticle = () => {
             e.preventDefault();
             const imageURL = await imageUpload(formData.image)
             const updatedData = { ...formData, tags: formData.tags, image: imageURL }
-            console.log(updatedData)
+            // console.log(updatedData);
             // post article in db
             await axiosSecure.patch(`/update-article/${id}`, updatedData)
             toast.success("Article Updated successfully")

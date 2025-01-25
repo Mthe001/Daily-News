@@ -89,7 +89,7 @@ const CheckoutForm = ({ price }) => {
                 setIsSubscribe(true)
                 navigate("/")
                 const { data:role } = await axiosSecure.get(`/users/role/${user?.email}`)
-                console.log(role)
+                // console.log(role)
                 toast.success(`Congrats, You have taken the ${paymentIntent.amount === 500 ? "Standard" : "Premium"} Subscription`)
             } catch (error) {
                 console.error("Error updating user role:", error);

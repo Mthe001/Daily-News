@@ -46,12 +46,12 @@ const AllArticles = () => {
         e.preventDefault()
         const searchText = e.target.search.value
         setSearch(searchText)
-        console.log(search)
+        // console.log(search)
     }
 
 
     const approvedArticles = articles.filter(article => article.status === "approved")
-    console.log(approvedArticles)
+    // console.log(approvedArticles)
 
     return (
         <div>

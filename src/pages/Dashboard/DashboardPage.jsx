@@ -3,7 +3,7 @@ import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
 import RadarChart from "@/components/RadarChart"; // Import RadarChart
 import useAuth from '@/hooks/useAuth';
-import logoOfThisWeb from '../../../public/logos.png'
+
 
 const DashboardPage = () => {
     const { user } = useAuth(); // Destructuring user object from useAuth hook.

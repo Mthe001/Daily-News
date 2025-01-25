@@ -95,7 +95,7 @@ const AllArticlesForAdmin = () => {
     }
 
     const handleDeleteArticle = (id) => {
-        console.log(id)
+        // console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You wont be able to recover this",
@@ -143,7 +143,7 @@ const AllArticlesForAdmin = () => {
             }
         });
     }
-    console.log(articles)
+    // console.log(articles)
     return (
         <div>
             <Helmet>
