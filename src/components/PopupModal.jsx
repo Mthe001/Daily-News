@@ -70,7 +70,6 @@
 
 // export default PopupModal;
 
-
 import { Button, Dialog, DialogPanel, DialogTitle } from '@headlessui/react';
 import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -92,7 +91,7 @@ function PopupModal() {
             if (role === "user") {
                 setIsOpen(true);
             }
-        }, 3000);
+        }, 3000); // Show modal after 3 seconds
     }, [role]);
 
     return (
@@ -103,7 +102,18 @@ function PopupModal() {
                     aria-hidden="true"
                 >
                     <div className="flex min-h-full items-center justify-center p-6">
-                        <DialogPanel className="w-full max-w-lg bg-white rounded-2xl shadow-2xl">
+                        <DialogPanel className="w-full max-w-lg bg-white rounded-2xl shadow-2xl relative">
+                            {/* Back Button in the top-left corner */}
+                            <button
+                                onClick={() => {
+                                    close();
+                                    navigate(-1); // Navigate back to the previous page
+                                }}
+                                className="absolute top-4 left-4 bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-full transition-transform transform hover:scale-105 shadow-md"
+                            >
+                                Back
+                            </button>
+
                             <div className="p-6 text-center">
                                 <DialogTitle as="h3" className="text-2xl font-bold text-gray-800 mb-4">
                                     Unlock Premium Features!
@@ -136,15 +146,6 @@ function PopupModal() {
                                         className="w-3/4 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-full transition-transform transform hover:scale-105"
                                     >
                                         Maybe Later
-                                    </Button>
-                                    <Button
-                                        onClick={() => {
-                                            close();
-                                            navigate(-1); // Navigate back to the previous page
-                                        }}
-                                        className="w-3/4 py-3 bg-red-500 hover:bg-red-600 text-white font-medium rounded-full transition-transform transform hover:scale-105"
-                                    >
-                                        Go Back
                                     </Button>
                                 </div>
                             </div>
