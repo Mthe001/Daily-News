@@ -83,6 +83,7 @@
 
 
 
+
 import useAxiosPublic from '@/hooks/useAxiosPublic';
 import Loader from '@/shared/LoaderSpinner';
 import { useQuery } from '@tanstack/react-query';
@@ -124,7 +125,7 @@ const ArticleDetails = () => {
     const { title, description, postedDate, status, image, tags, views, isPremium, authorName } = article || {};
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen py-10">
             {isLoading ? (
                 <div className="flex items-center justify-center gap-3 h-screen">
                     <Loader />
@@ -132,29 +133,33 @@ const ArticleDetails = () => {
                 </div>
             ) : (
                 <div className="container mx-auto py-8 px-4">
-                    {/* Back Button */}
-                    <button
-                        onClick={() => navigate(-1)}
-                        className="flex items-center gap-2 text-blue-500 hover:text-blue-700 font-semibold mb-6"
-                    >
-                        <FaArrowLeft size={18} />
-                        Back
-                    </button>
+                 
+                   
 
-                    {/* Card Design */}
-                    <div className="bg-white rounded-lg shadow-lg p-6 space-y-6 flex flex-col">
+                    {/* Card Design with Flex and 90% Width */}
+                    <div className="bg-white rounded-lg shadow-lg p-6 space-y-6 flex flex-col md:flex-row justify-between w-11/12 md:w-9/12 mx-auto">
+                            {/* Back Button */}
+                           <div>
+                                <button
+                                    onClick={() => navigate(-1)}
+                                    className="flex items-center gap-2 text-blue-500 hover:text-blue-700 font-semibold mb-6"
+                                >
+                                    <FaArrowLeft size={18} />
+                                    Back
+                                </button>
+                           </div>
                         {/* Image Section */}
-                        <div className="w-full">
+                        <div className="w-full md:w-6/12">
                             <img
-                                className="rounded-lg object-cover w-full h-64"
+                                className="rounded-lg object-cover w-full h-64 md:h-auto"
                                 src={image}
                                 alt={title}
                             />
                         </div>
 
                         {/* Content Section */}
-                        <div className="space-y-4">
-                            <h1 className="text-3xl font-semibold">{title}</h1>
+                        <div className="w-full md:w-5/12 space-y-4">
+                            <h1 className="text-3xl text-slate-500 font-semibold">{title}</h1>
                             <div className="text-gray-600 space-y-2">
                                 <p>
                                     <b>Author:</b> {authorName}
