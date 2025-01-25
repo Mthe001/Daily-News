@@ -25,6 +25,7 @@ import Support from "@/pages/About/Support";
 import Forums from "@/pages/About/Forums";
 import Contribute from "@/pages/OurProject/Contribute";
 import MediaAssets from "@/pages/OurProject/MediaAssets";
+import Changelog from "@/pages/OurProject/Changelog";
 
 const router = createBrowserRouter([
     {
@@ -96,6 +97,10 @@ const router = createBrowserRouter([
             {
                 path:'/media-assets',
                 element:<MediaAssets/>,
+            },
+            {
+                path:'/change-log',
+                element:<Changelog/>,
             },
 
         ]
