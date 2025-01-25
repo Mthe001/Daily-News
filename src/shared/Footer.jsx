@@ -52,9 +52,9 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition">
-                    Media Assets
-                  </a>
+                 <Link to='/media-assets' className="hover:text-white transition">
+                   Media Assets
+                 </Link>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white transition">

@@ -24,6 +24,7 @@ import Features from "@/pages/About/Features";
 import Support from "@/pages/About/Support";
 import Forums from "@/pages/About/Forums";
 import Contribute from "@/pages/OurProject/Contribute";
+import MediaAssets from "@/pages/OurProject/MediaAssets";
 
 const router = createBrowserRouter([
     {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
             {
                 path:'/contribute',
                 element: <Contribute/>,
+            },
+            {
+                path:'/media-assets',
+                element:<MediaAssets/>,
             },
 
         ]
