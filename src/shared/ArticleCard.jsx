@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
 
     return (
         <div
-            className={`group w-full border ${isPremium ? "border-orange-400 bg-gradient-to-r from-orange-100 to-orange-200" : "border-gray-300 bg-gradient-to-r from-cyan-700 to-cyan-800"
+            className={`group w-full border ${isPremium ? "border-orange-400 bg-gradient-to-r from-orange-100 to-orange-200" : "border-gray-300 bg-gradient-to-r from-cyan-100 to-cyan-400"
                 } rounded-lg shadow-md transition-transform transform hover:scale-105 hover:shadow-xl`}
         >
             {/* Image Section */}
