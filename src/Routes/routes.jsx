@@ -28,48 +28,49 @@ import MediaAssets from "@/pages/OurProject/MediaAssets";
 import Changelog from "@/pages/OurProject/Changelog";
 import Releases from "@/pages/OurProject/Releases";
 
+
 const router = createBrowserRouter([
     {
         path: "/",
-        errorElement: <ErrorPage></ErrorPage>,
-        element: <MainLayout></MainLayout>,
+        errorElement: <ErrorPage/>,
+        element: <MainLayout/>,
         children: [
             {
                 path: "/",
-                element: <Home></Home>,
+                element: <Home/>,
             },
             {
                 path: "/add-article",
-                element: <PrivateRoute><AddArticles></AddArticles></PrivateRoute>
+                element: <PrivateRoute><AddArticles/></PrivateRoute>,
             },
             {
                 path: "/all-articles",
-                element: <AllArticles></AllArticles>
+                element: <AllArticles/>,
             },
             {
                 path: "/premium-articles",
-                element: <PremiumRoute><PremiumArticles></PremiumArticles></PremiumRoute>
+                element: <PremiumRoute><PremiumArticles/></PremiumRoute>
             },
             {
                 path: "/article/:id",
-                element: <PrivateRoute><ArticleDetails></ArticleDetails></PrivateRoute> ,
+                element: <PrivateRoute><ArticleDetails/></PrivateRoute> ,
 
             },
             {
                 path: "/subscription",
-                element: <PrivateRoute><Subscription></Subscription></PrivateRoute>
+                element: <PrivateRoute><Subscription/></PrivateRoute>
             },
             {
                 path: "/my-articles",
-                element: <PrivateRoute><MyArticles></MyArticles></PrivateRoute>
+                element: <PrivateRoute><MyArticles/></PrivateRoute>
             },
             {
                 path: "/update-article/:id",
-                element: <PrivateRoute><UpdateArticle></UpdateArticle> </PrivateRoute>
+                element: <PrivateRoute><UpdateArticle/></PrivateRoute>
             },
             {
                 path: "/my-profile",
-                element: <PrivateRoute><UserProfile></UserProfile> </PrivateRoute>
+                element: <PrivateRoute><UserProfile/></PrivateRoute>
             },
             {
                 path: "/login",
@@ -115,35 +116,35 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage></ErrorPage>,
         element:
             <PrivateRoute>
-                <AdminRoute><Dashboard></Dashboard></AdminRoute>
+                <AdminRoute><Dashboard/></AdminRoute>
             </PrivateRoute>,
         children: [
             {
                 index: true,
                 element:
                     <PrivateRoute>
-                        <AdminRoute><DashboardPage></DashboardPage> </AdminRoute>
+                        <AdminRoute><DashboardPage/></AdminRoute>
                     </PrivateRoute>,
             },
             {
                 path: "all-users",
                 element:
                     <PrivateRoute>
-                        <AdminRoute><AllUsers></AllUsers> </AdminRoute>
+                        <AdminRoute><AllUsers/></AdminRoute>
                     </PrivateRoute>,
             },
             {
                 path: "all-articles",
                 element:
                     <PrivateRoute>
-                        <AdminRoute><AllArticlesForAdmin></AllArticlesForAdmin> </AdminRoute>
+                        <AdminRoute><AllArticlesForAdmin/></AdminRoute>
                     </PrivateRoute>,
             },
             {
                 path: "add-publisher",
                 element:
                     <PrivateRoute>
-                        <AdminRoute><AddPublisher></AddPublisher></AdminRoute>
+                        <AdminRoute><AddPublisher/></AdminRoute>
                     </PrivateRoute>,
             },
         ]
