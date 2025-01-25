@@ -43,7 +43,7 @@ function Navbar() {
                                 ?
                                 <Button size="lg" onClick={() => logOut()} className="px-6 xl:hidden  dark:text-background font-medium rounded-md shadow-md  transition duration-300 mr-4">Logout</Button>
                                 :
-                                <Link to="/login" className="px-6 py-2 bg-gray-800 text-white dark:text-background font-medium rounded-md shadow-md dark:bg-gray-300 transition duration-300 mr-4">Login</Link>}
+                                <Link to="/login" className="px-6 py-2 text-white bg-orange-400 dark:text-background font-medium rounded-md shadow-md  transition duration-300 mr-4">Login</Link>}
                         </div>
 
                         <li><NavLink className={"mr-3 bg-background rounded-full border bg-[#DCDCDC] border-gray-400 dark:bg-[#DCDCDC] dark:text-background"} to={"/"}>Home</NavLink></li>
@@ -109,10 +109,10 @@ function Navbar() {
                 :
                 <>
                     <Link to="/login" >
-                        <Button size="lg" className=" hidden lg:inline-block py-2  font-medium rounded-md shadow-md  transition duration-300 mr-4">Login</Button>
+                        <Button size="lg" className=" hidden lg:inline-block py-2  bg-orange-500 rounded-full font-semibold  shadow-md  transition duration-300 mr-4">Login</Button>
                     </Link>
                     <Link to="/register" >
-                        <Button size="lg" className=" hidden lg:inline-block py-2  font-medium rounded-md shadow-md  transition duration-300 mr-4">Register</Button>
+                        <Button size="lg" className=" hidden lg:inline-block py-2  bg-green-400 font-semibold rounded-full shadow-md  transition duration-300 mr-4">Register</Button>
                     </Link>
                 </>
             }
