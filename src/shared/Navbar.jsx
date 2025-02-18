@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import useRole from '@/hooks/useRole';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { FaAngleDown } from "react-icons/fa6";
+import { ModeToggle } from '@/components/mode-toggle';
 
 
 function Navbar() {
@@ -117,6 +118,7 @@ function Navbar() {
                 </>
             }
 
+               <ModeToggle/>
         </div>
 
     );
