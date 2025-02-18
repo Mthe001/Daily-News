@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import logoFooter from "../../public/logos.png";
 const Footer = () => {
   return (
-    <footer className="bg-[#121212] text-gray-400 py-12">
+    <footer className="bg-background border-t-2 text-foreground py-12">
       <div className="max-w-7xl mx-auto px-6">
         {/* Logo & Description */}
         <div className="flex flex-wrap justify-between items-start gap-8 mb-12">
           <div className="flex items-center">
             <img className="w-32" src={logoFooter} alt="News 240 Logo" />
-            <p className="mt-2 max-w-xs text-sm text-gray-300 ml-4">
+            <p className="mt-2 max-w-xs text-sm text-gray-500 ml-4">
               Stay informed with News 240 — your go-to source for the latest breaking news, insights, and updates.
             </p>
           </div>
@@ -17,25 +17,25 @@ const Footer = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             {/* About */}
             <div>
-              <h3 className="text-white font-medium mb-4">About News 240</h3>
+              <h3 className="text-base-content font-medium mb-4">About News 240</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to="/features" className="hover:text-white transition">
+                  <Link to="/features" className="hover:text-blue-600 transition">
                     Features
                   </Link>
                 </li>
                 <li>
-                  <Link to="/subscription" className="hover:text-white transition">
+                  <Link to="/subscription" className="hover:text-blue-600 transition">
                     Pricing
                   </Link>
                 </li>
                 <li>
-                  <Link to="/support" className="hover:text-white transition">
+                  <Link to="/support" className="hover:text-blue-600 transition">
                     Support
                   </Link>
                 </li>
                 <li>
-                  <Link to="/forums" className="hover:text-white transition">
+                  <Link to="/forums" className="hover:text-blue-600 transition">
                     Forums
                   </Link>
                 </li>
@@ -44,25 +44,25 @@ const Footer = () => {
 
             {/* Project */}
             <div>
-              <h3 className="text-white font-medium mb-4">Our Project</h3>
+              <h3 className="text-base-content font-medium mb-4">Our Project</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <Link to='/contribute' className="hover:text-white transition">
+                  <Link to='/contribute' className="hover:text-blue-600 transition">
                     Contribute
                   </Link>
                 </li>
                 <li>
-                 <Link to='/media-assets' className="hover:text-white transition">
+                  <Link to='/media-assets' className="hover:text-blue-600 transition">
                    Media Assets
                  </Link>
                 </li>
                 <li>
-                  <Link to='/change-log' className="hover:text-white transition">
+                  <Link to='/change-log' className="hover:text-blue-600 transition">
                     Changelog
                   </Link>
                 </li>
                 <li>
-                  <Link to='/release-notes' className="hover:text-white transition">
+                  <Link to='/release-notes' className="hover:text-blue-600 transition">
                   Releases
                   </Link>
                 </li>
@@ -71,25 +71,25 @@ const Footer = () => {
 
             {/* Community */}
             <div>
-              <h3 className="text-white font-medium mb-4">Join Our Community</h3>
+              <h3 className="text-base-content font-medium mb-4">Join Our Community</h3>
               <ul className="space-y-2 text-sm">
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <a href="#" className="hover:text-blue-600 transition">
                     Join Discord
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <a href="#" className="hover:text-blue-600 transition">
                     Follow on Twitter
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <a href="#" className="hover:text-blue-600 transition">
                     Subscribe to Newsletter
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-white transition">
+                  <a href="#" className="hover:text-blue-600 transition">
                     GitHub Discussions
                   </a>
                 </li>
