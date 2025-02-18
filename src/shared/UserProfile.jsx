@@ -72,18 +72,18 @@ const UserProfile = () => {
                     {/* Bento Grid Layout - Cards of different sizes */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16">
                         {/* Personal Info Card */}
-                        <div className="bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
-                            <h2 className="text-xl sm:text-2xl font-semibold text-blue-600 mb-4">Personal Information</h2>
+                        <div className="dark:bg-blue-950 bg-blue-200 rounded-2xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
+                            <h2 className="text-xl sm:text-2xl font-semibold   dark:text-blue-600 mb-4">Personal Information</h2>
                             <div className="space-y-4">
-                                <div className="flex justify-between text-blue-700">
+                                <div className="flex justify-between text-blue-500">
                                     <span className="font-medium">Full Name:</span>
                                     <span>{user.displayName}</span>
                                 </div>
-                                <div className="flex justify-between text-blue-700">
+                                <div className="flex justify-between text-blue-500">
                                     <span className="font-medium">Email:</span>
                                     <span>{user.email}</span>
                                 </div>
-                                <div className="flex justify-between text-blue-700">
+                                <div className="flex justify-between text-blue-500">
                                     <span className="font-medium">Location:</span>
                                     <span>{user.location || "Not provided"}</span>
                                 </div>
@@ -91,18 +91,18 @@ const UserProfile = () => {
                         </div>
 
                         {/* Stats Card */}
-                        <div className="bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
+                        <div className="dark:bg-blue-950 bg-blue-100 rounded-2xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl">
                             <h2 className="text-xl sm:text-2xl font-semibold text-blue-600 mb-4">Statistics</h2>
                             <div className="space-y-4">
-                                <div className="flex justify-between text-blue-700">
+                                <div className="flex justify-between text-blue-400">
                                     <span className="font-medium">Total Posts:</span>
                                     <span>{articles.length}</span>
                                 </div>
-                                <div className="flex justify-between text-blue-700">
+                                <div className="flex justify-between dark:text-blue-300 text-blue-500">
                                     <span className="font-medium">Followers:</span>
                                     <span>{user?.followersCount || "Coming soon"}</span>
                                 </div>
-                                <div className="flex justify-between text-blue-700">
+                                <div className="flex justify-between text-blue-600 dark:text-blue-400">
                                     <span className="font-medium">Following:</span>
                                     <span>{user.followingCount || "Coming soon"}</span>
                                 </div>
@@ -110,7 +110,7 @@ const UserProfile = () => {
                         </div>
 
                         {/* Recent Posts Card (Bigger size for visual interest) */}
-                        <div className="bg-white rounded-2xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl sm:col-span-2 lg:col-span-1">
+                        <div className="dark:bg-blue-950 bg-blue-50 rounded-2xl shadow-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl sm:col-span-2 lg:col-span-1">
                             <h2 className="text-xl sm:text-2xl font-semibold text-blue-600 mb-4">Recent Posts</h2>
                             <ul className="space-y-4">
                                 {articles && articles.length > 0 ? (
