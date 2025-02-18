@@ -51,7 +51,7 @@ export default function AllPublishers() {
     return (
         <>
         <h1 className=" tracking-[0.6rem] font-bold text-gray-800 uppercase text-center">
-                <div className="z-10 flex items-center justify-center">
+                <div className="z-10 flex items-center my-4  justify-center">
                     <div
                         className={cn(
                             "group rounded-full  mt-10 lg:text-4xl md:text-3xl text-xl text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200  text-nowrap ",
@@ -63,7 +63,7 @@ export default function AllPublishers() {
                     </div>
                 </div>
             </h1>
-        <div className="relative w-10/12 mx-auto  flex h-[300px] flex-col items-center justify-center overflow-hidden bg-background ">
+        <div className="relative w-10/12 mx-auto  rounded-lg flex h-[300px] flex-col items-center justify-center overflow-hidden bg-background ">
             
             <Marquee pauseOnHover className="[--duration:30s]">
                 {publishers.map((publisher) => (
