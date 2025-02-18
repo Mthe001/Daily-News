@@ -59,7 +59,7 @@ const LiveAndAnalyticals = () => {
             <div className="mt-8 text-center">
                 <h3 className="text-2xl font-semibold mb-4">News Consumption Pattern</h3>
                 <div className="flex justify-center">
-                    <div className="w-1/2">
+                    <div className="w-full">
                         <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg">
                             <h4 className="text-xl font-semibold text-gray-900 dark:text-white">Device Usage</h4>
                             <p className="text-gray-700 dark:text-gray-300">Chart coming soon.</p>
