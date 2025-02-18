@@ -15,7 +15,7 @@ function Navbar() {
     const [role] = useRole()
     if (loading) return
     return (
-        <div className="fixed inset-x-0 navbar bg-zinc-600/30 text-blue-500 lg:px-20 py-4 mx-auto  border-2 border-b-stone-700 flex justify-between items-center backdrop-blur-xl ">
+        <div className="fixed inset-x-0 navbar bg-zinc-600/30 text-blue-500 lg:px-20 py-4 mx-auto   rounded-b-xl border-2 border-b-stone-700 flex justify-between items-center backdrop-blur-xl ">
             <div className="justify-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost xl:hidden">
