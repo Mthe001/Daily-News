@@ -4,6 +4,7 @@ import Footer from "@/shared/Footer";
 import useAuth from "@/hooks/useAuth";
 import Loader from "@/shared/LoaderSpinner";
 import PopupModal from "@/components/PopUpModal";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
 
 const MainLayout = () => {
     const { loading } = useAuth()
@@ -21,7 +22,7 @@ const MainLayout = () => {
             <div className=" pt-[87px] min-h-[calc(100vh-336px)]">
                 <Outlet></Outlet>
             </div>
-
+                    <ScrollProgress/>  
             <footer>
                 <Footer></Footer>
             </footer>
