@@ -10,12 +10,12 @@ const FeedbackSection = () => {
     };
 
     return (
-        <div className="bg-background border-2 mx-9 rounded-lg py-16 px-6 text-white">
+        <div className="bg-background border-2 mx-9 rounded-lg py-16 my-7 px-6 text-white">
             <div className="max-w-6xl mx-auto space-y-16">
                 {/* Header */}
                 <div className="text-center">
-                    <h2 className="text-4xl font-extrabold mb-4">We Value Your Feedback!</h2>
-                    <p className="text-lg text-gray-300">
+                    <h2 className="text-4xl dark:text-blue-600 text-gray-800 font-extrabold mb-4">We Value Your Feedback!</h2>
+                    <p className="text-lg text-gray-500 font-semibold dark:text-gray-300">
                         Share your thoughts or suggestions to help us improve.
                     </p>
                 </div>
@@ -23,18 +23,18 @@ const FeedbackSection = () => {
                 {/* Bento Grid Layout */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Feedback Form */}
-                    <div className="bg-gray-800 rounded-2xl shadow-lg p-8">
-                        <h3 className="text-2xl font-semibold mb-6">Submit Your Feedback</h3>
+                    <div className="bg-zinc-300 dark:bg-gray-800 rounded-xl shadow-lg p-8">
+                        <h3 className="text-2xl dark:text-blue-600  text-black font-semibold mb-6">Submit Your Feedback</h3>
                         <form onSubmit={handleFeedbackSubmit} className="space-y-6">
                             <div>
-                                <label htmlFor="feedback" className="block text-lg mb-2">
+                                <label htmlFor="feedback" className="block dark:text-blue-500 text-black text-lg mb-2">
                                     Your Feedback
                                 </label>
                                 <textarea
                                     id="feedback"
                                     value={feedback}
                                     onChange={(e) => setFeedback(e.target.value)}
-                                    className="w-full p-4 rounded-lg bg-gray-700 text-gray-300 focus:ring-2 focus:ring-yellow-500"
+                                    className="w-full p-4 rounded-lg bg-gray-200 dark:bg-slate-700 dark:text-zinc-300 text-gray-500 focus:ring-2 focus:ring-yellow-500"
                                     rows="5"
                                     placeholder="Type your feedback here..."
                                     required
@@ -42,7 +42,7 @@ const FeedbackSection = () => {
                             </div>
                             <button
                                 type="submit"
-                                className="w-full py-3 bg-yellow-500 text-gray-900 rounded-full font-medium shadow-md hover:bg-yellow-400 transition-all"
+                                className="w-full py-3 bg-blue-500 text-gray-900 rounded-full font-medium shadow-md hover:bg-yellow-400 transition-all"
                             >
                                 Submit Feedback
                             </button>
@@ -51,7 +51,7 @@ const FeedbackSection = () => {
 
                     {/* User Feedback Display */}
                     <div className="space-y-6">
-                        <h3 className="text-2xl font-semibold">What Others Are Saying</h3>
+                        <h3 className="text-2xl text-foreground font-semibold">What Others Are Saying</h3>
                         <div className="grid gap-6">
                             {[
                                 {
