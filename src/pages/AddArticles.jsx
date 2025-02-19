@@ -92,15 +92,15 @@ const AddArticles = () => {
             <Helmet>
                 <title>Add Article ! News 240</title>
             </Helmet>
-            <div className="md:w-11/12 lg:w-10/12 flex flex-col md:flex-row bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg rounded-lg overflow-hidden">
+            <div className="md:w-11/12 lg:w-10/12 flex flex-col md:flex-row bg-background border-2 p-5 shadow-lg rounded-lg overflow-hidden">
                 {/* Lottie Animation Section */}
                 <div className="md:w-1/2 p-6  rounded-l-lg flex justify-center items-center shadow-lg">
                     <Lottie animationData={register} loop={true} /> {/* Lottie with the JSON */}
                 </div>
 
                 {/* Form Section */}
-                <div className="md:w-1/2 p-6 space-y-6 bg-white rounded-r-lg shadow-xl">
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-4">Submit Your Article</h2>
+                <div className="md:w-1/2 p-6 space-y-6 bg-background border-2 rounded-r-lg shadow-xl">
+                    <h2 className="text-3xl font-semibold dark:text-blue-500 text-foreground mb-4">Submit Your Article</h2>
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {/* Title Field */}
                         <div className="space-y-2">
@@ -111,7 +111,7 @@ const AddArticles = () => {
                                 name="title"
                                 value={formData.title}
                                 onChange={handleInputChange}
-                                className="w-full p-4 border border-gray-300 bg-violet-500 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+                                className="w-full p-4 border border-gray-300 bg-background rounded-lg  focus:outline-none "
                                 required
                             />
                         </div>
@@ -124,7 +124,7 @@ const AddArticles = () => {
                                 id="image"
                                 name="image"
                                 onChange={handleFileChange}
-                                className="w-full p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none"
+                                className="w-full p-4 border border-gray-300 bg-background rounded-lg  focus:outline-none"
                             />
                         </div>
 
@@ -136,7 +136,7 @@ const AddArticles = () => {
                                 name="publisher"
                                 value={formData.publisher}
                                 onChange={handleInputChange}
-                                className="w-full p-4 border border-gray-300 bg-purple-600 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-4 border border-gray-300 bg-background rounded-lg  focus:outline-none"
                                 required
                             >
                                 <option value="" disabled>Select a Publisher</option>
@@ -158,7 +158,7 @@ const AddArticles = () => {
                                 options={tagOptions}
                                 value={formData.tags}
                                 onChange={handleTagsChange}
-                                className="w-full text-violet-600 font-semibold bg-cyan-100 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full bg-background text-cyan-500"
                             />
                         </div>
 
@@ -171,7 +171,7 @@ const AddArticles = () => {
                                 value={formData.description}
                                 onChange={handleInputChange}
                                 rows="4"
-                                className="w-full p-4 border bg-purple-300 text-stone-700  border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-4 bg-background border-2 rounded-lg"
                                 required
                             />
                         </div>
@@ -179,7 +179,7 @@ const AddArticles = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 px-6 rounded-lg shadow-md hover:bg-gradient-to-l hover:from-indigo-500 hover:to-purple-500 transition-all transform hover:scale-105"
+                            className="w-full bg-blue-500 text-white py-4 px-6 rounded-lg "
                         >
                             Submit Article
                         </button>
