@@ -54,10 +54,10 @@ export default function AllPublishers() {
                 <div className="z-10 flex items-center my-4  justify-center">
                     <div
                         className={cn(
-                            "group rounded-full  mt-10 lg:text-4xl md:text-3xl text-xl text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200  text-nowrap ",
+                            "group rounded-full  mt-10 lg:text-4xl md:text-3xl text-xl text-white transition-all ease-in hover:cursor-pointer hover:bg-transparent  text-nowrap ",
                         )}
                     >
-                        <AnimatedShinyText className="inline-flex text-neutral-600 items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-700 hover:duration-300">
+                        <AnimatedShinyText className="inline-flex text-neutral-600  items-center justify-center px-4 py-1 transition ease-out hover:text-neutral-700 hover:duration-300">
                             <span>PUBLISHERS</span> 
                         </AnimatedShinyText>
                     </div>

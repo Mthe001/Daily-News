@@ -2,6 +2,7 @@ import React from "react";
 import { FaChartLine, FaGlobe, FaUsers } from "react-icons/fa";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const LiveAndAnalyticals = () => {
     const { ref: totalUsersRef, inView: totalUsersInView } = useInView({ triggerOnce: true, threshold: 1 });
@@ -10,7 +11,8 @@ const LiveAndAnalyticals = () => {
 
     return (
         <div className="bg-background border-2 mx-9 p-10 rounded-lg shadow-lg mb-8 text-gray-900 dark:text-white">
-            <h2 className="text-3xl font-bold text-center mb-6">Live News Trends & Analytics</h2>
+
+            <TextAnimate className="text-3xl font-bold text-center mb-6" animation="slideUp" by="character">Live News Trends & Analytics</TextAnimate>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* Total Users Stats */}
@@ -57,7 +59,7 @@ const LiveAndAnalyticals = () => {
             </div>
 
             <div className="mt-8 text-center">
-                <h3 className="text-2xl font-semibold mb-4">News Consumption Pattern</h3>
+                <TextAnimate className="text-2xl font-semibold mb-4" animation="slideUp" by="character">News Consumption Pattern</TextAnimate>
                 <div className="flex justify-center">
                     <div className="w-full">
                         <div className="bg-gray-200 dark:bg-gray-800 p-6 rounded-lg shadow-lg">

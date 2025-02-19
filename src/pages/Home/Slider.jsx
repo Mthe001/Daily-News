@@ -8,6 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import useRole from "@/hooks/useRole";
 import Loader from "@/shared/LoaderSpinner";
+import { TextAnimate } from "@/components/magicui/text-animate";
 
 const SwiperSlider = () => {
 
@@ -38,7 +39,7 @@ const SwiperSlider = () => {
                 <Loader></Loader> <h1 className="text-4xl">Loading</h1></div>
             :
             <div className="relative w-full max-w-screen-xl mt-10 mx-auto">
-                <h1 className="mb-10 lg:text-5xl md:text-4xl text-3xl text-center font-semibold text-foreground ">Top News by : NEWS 240</h1>
+                <TextAnimate className="mb-10 lg:text-5xl md:text-4xl text-3xl text-center font-semibold text-foreground" animation="blurInUp" by="character">Top News by : NEWS 240</TextAnimate>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
                     effect="coverflow"
