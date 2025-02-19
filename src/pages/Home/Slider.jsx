@@ -39,7 +39,7 @@ const SwiperSlider = () => {
                 <Loader></Loader> <h1 className="text-4xl">Loading</h1></div>
             :
             <div className="relative w-full max-w-screen-xl mt-10 mx-auto">
-                <TextAnimate className="mb-10 lg:text-5xl md:text-4xl text-3xl text-center font-semibold text-foreground" animation="blurInUp" by="character">Top News by : NEWS 240</TextAnimate>
+                <TextAnimate className="mb-10 lg:text-5xl md:text-4xl text-3xl text-center font-semibold dark:text-blue-600 text-black" animation="blurInUp" by="character">Top News by : NEWS 240</TextAnimate>
                 <Swiper
                     modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
                     effect="coverflow"
