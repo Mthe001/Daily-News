@@ -4,6 +4,7 @@ import Loader from "@/shared/LoaderSpinner";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
+import { Link, useNavigate } from "react-router-dom";
 
 const AllArticles = () => {
     const axiosPublic = useAxiosPublic()
@@ -41,7 +42,6 @@ const AllArticles = () => {
 
 
 
-
     const handleSearch = (e) => {
         e.preventDefault()
         const searchText = e.target.search.value
@@ -52,7 +52,7 @@ const AllArticles = () => {
 
     const approvedArticles = articles.filter(article => article.status === "approved")
     // console.log(approvedArticles)
-
+   
     return (
         <div>
             <Helmet>
@@ -61,7 +61,9 @@ const AllArticles = () => {
             <div className="w-11/12 mx-auto pt-10">
                 <div className="flex items-center flex-col lg:flex-row justify-between px-2">
                     <div>
-                        <h2 className="text-3xl font-medium mb-6 lg:mb-0">All News</h2>
+                        <Link to="/all-articles"><h2 className="text-3xl font-medium mb-6 lg:mb-0">All News</h2></Link>
+                       
+
                     </div>
                     {/* search filter section */}
                     <nav className="flex items-center flex-col md:flex-row justify-center gap-6">
@@ -72,7 +74,7 @@ const AllArticles = () => {
                                 name="publisher"
                                 value={publisher}
                                 onChange={(e) => setPublisher(e.target.value)}
-                                className="w-full p-2 border bg-green-600 border-gray-300  rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-2 border bg-background border-gray-300  rounded"
                                 required
                             >
                                 <option value="" disabled>Select a Publisher</option>
@@ -85,12 +87,12 @@ const AllArticles = () => {
                         </div>
                         {/* search section */}
                         <div className="flex justify-center ">
-                            <form onSubmit={handleSearch} className="flex items-center w-full max-w-md bg-white shadow-md rounded-lg">
+                            <form onSubmit={handleSearch} className="flex items-center w-full max-w-md bg-background border-2  rounded-lg">
                                 <input
                                     type="text"
                                     name="search"
                                     placeholder="Search news..."
-                                    className="flex-grow px-4 py-2 text-gray-700 bg-transparent rounded-l-lg"
+                                    className="flex-grow px-4 py-2 dark:text-gray-300 text-zinc-700 bg-transparent rounded-l-lg"
                                 />
                                 <button
                                     type="submit"
@@ -109,7 +111,7 @@ const AllArticles = () => {
                                 name="tags"
                                 value={tags}
                                 onChange={(e) => setTags(e.target.value)}
-                                className="w-full p-2 border border-gray-300 bg-rose-500 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                className="w-full p-2 border border-gray-300 bg-background rounded "
                                 required
                             >
                                 <option disabled value=''>Select a tag</option>
