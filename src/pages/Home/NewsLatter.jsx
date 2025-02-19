@@ -15,9 +15,9 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-900 to-indigo-600 py-16 flex flex-col items-center justify-center px-6">
+    <div className=" bg-background border-2 mx-9 rounded-lg my-10 py-16 flex flex-col items-center justify-center px-6">
       <motion.div
-        className="w-full max-w-3xl bg-gray-900 shadow-2xl rounded-2xl p-8 lg:p-12 text-gray-200 space-y-8"
+        className="w-full max-w-3xl bg-background shadow-2xl rounded-2xl p-8 lg:p-12 border-2 text-gray-200 space-y-8"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -26,14 +26,14 @@ const NewsletterSignup = () => {
           <div>
             {/* Header Section */}
             <motion.h1
-              className="text-5xl font-extrabold text-center text-white mb-6"
+              className="text-5xl font-extrabold text-center text-foreground dark:text-white mb-6"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.5 }}
             >
               Join Our Premium Package
             </motion.h1>
-            <p className="text-gray-300 text-center text-lg mb-10">
+            <p className="text-gray-600 text-center text-lg mb-10">
               Be the first to know about updates, news, and exclusive content.
               Subscribe now to stay connected.
             </p>
