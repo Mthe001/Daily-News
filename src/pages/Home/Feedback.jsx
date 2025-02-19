@@ -10,7 +10,7 @@ const FeedbackSection = () => {
     };
 
     return (
-        <div className="bg-gradient-to-br from-gray-900 to-gray-800 py-16 px-6 text-white">
+        <div className="bg-background border-2 mx-9 rounded-lg py-16 px-6 text-white">
             <div className="max-w-6xl mx-auto space-y-16">
                 {/* Header */}
                 <div className="text-center">
