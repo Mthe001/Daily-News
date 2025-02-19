@@ -32,13 +32,13 @@ const SubscriptionPage = () => {
   };
 
   return (
-    <div className="pb-20 bg-gradient-to-b from-zinc-700 via-stone-800 to-indigo-900 text-white">
+    <div className="pb-20 bg-background text-white">
       <Helmet>
         <title>Subscription || News 240</title>
       </Helmet>
       {/* Banner Section */}
-      <section className="relative pt-24 pb-16 px-4 text-center">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+      <section className="relative pt-24 pb-16 px-4 text-foreground text-center">
+        <div className="absolute inset-0 text-black opacity-50"></div>
         <div className="relative z-10">
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-6">
             Subscribe to Access Premium News

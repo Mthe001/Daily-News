@@ -8,7 +8,7 @@ const PlansSection = () => {
     return (
         <section className={`plans-section ${pathname === "/" ? "pt-24" : "pt-0"} pb-10 my-6 bg-background rounded-lg border-2 mx-10`}>
             <div className="md:w-11/12 w-full flex flex-col items-center justify-center p-8 rounded-xl mx-auto text-center">
-                <TextAnimate className="lg:text-5xl md:text-4xl text-xl text-start lg:text-center font-semibold  dark:text-blue-600 mb-8" animation="slideUp" by="character">Unlock Premium Benefits: Your Pathway to Exclusive Content Awaits</TextAnimate>
+                <TextAnimate className="lg:text-5xl md:text-4xl text-xl text-start lg:text-center font-semibold text-black  dark:text-blue-600 mb-8" animation="slideUp" by="character">Unlock Premium Benefits: Your Pathway to Exclusive Content Awaits</TextAnimate>
                 
                 <TextAnimate className="text-md text-start text-gray-600 dark:text-gray-400 mb-12" animation="blurInUp" by="character">Find the plan that fits you best! With premium features, you’ll unlock a whole new world of content and perks.</TextAnimate>
                                
