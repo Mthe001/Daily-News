@@ -32,7 +32,7 @@ const Statistic = () => {
   const { ref: premiumUsersRef, inView: premiumUsersInView } = useInView({ triggerOnce: true, threshold: 1 });
 
   return (
-    <div className="mb-10 flex flex-col justify-center items-center bg-gradient-to-b from-gray-900 to-black p-6">
+    <div className="mb-10 flex flex-col justify-center items-center bg-background border-2 mx-9 rounded-lg p-6">
       {/* Header */}
       <h1 className="tracking-[0.5rem] py-10 font-bold text-white uppercase text-center">
         <div className="z-10 flex items-center justify-center">
